@@ -1,14 +1,19 @@
 public abstract class Num {
-    protected  Num (String val, byte s, String rx){
-        value = toInt(val);
-        sys = s;
+    protected  Num (String val, int s, String rx){
         regex = rx;
+        sys = s;
+        value = toInt(val);
+    }
+    protected  Num (int val, int s, String rx){
+        regex = rx;
+        sys = s;
+        value = val;
     }
     protected int value;
-    final byte sys;
+    final int sys;
     protected String regex;
 
-    public byte getNumSys(){
+    public int getNumSys(){
         return sys;
     }
     public int getValue(){
