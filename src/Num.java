@@ -26,6 +26,9 @@ public abstract class Num {
     public String toString(){
         return Integer.toUnsignedString(value,sys);
     };
+    public String convent(int s){
+        return Integer.toUnsignedString(value,s);
+    };
     public int toInt(String val){
         if (!val.matches(regex) || val.matches("[ ,;:]"))
             throw new IllegalArgumentException("Невозможно преобразовать в указанную систму счисления: " + sys);
