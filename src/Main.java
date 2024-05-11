@@ -52,7 +52,10 @@ public class Main {
             System.out.println("Введи оператор ");
             op = sc.nextLine();
             result = numClass.getConstructor(int.class).newInstance(doOperation(a,b,op));
-            System.out.println(result);
+            System.out.println("В двоичной: "+result.convent(2));
+            System.out.println("В восьмиричной: "+result.convent(8));
+            System.out.println("В десятичной: "+result.convent(10));
+            System.out.println("В шестнадцатиричной: "+result.convent(16));
         } catch (Exception e) {
             System.out.println("Ошибка");
             System.out.println(e.getMessage());
