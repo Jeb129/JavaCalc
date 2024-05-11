@@ -1,17 +1,19 @@
 public abstract class Num {
-    public Num(int val, byte s){
-        value = val;
+    protected  Num (String val, int s, String rx){
+        regex = rx;
         sys = s;
-    }
-    public  Num (String val, byte s){
         value = toInt(val);
+    }
+    protected  Num (int val, int s, String rx){
+        regex = rx;
         sys = s;
+        value = val;
     }
     protected int value;
-    final byte sys;
+    final int sys;
     protected String regex;
 
-    public byte getNumSys(){
+    public int getNumSys(){
         return sys;
     }
     public int getValue(){
@@ -21,7 +23,9 @@ public abstract class Num {
         value = val;
     }
     @Override
-    public abstract String toString();
+    public String toString(){
+        return Integer.toUnsignedString(value,sys);
+    };
     public int toInt(String val){
         if (!val.matches(regex) || val.matches("[ ,;:]"))
             throw new IllegalArgumentException("Невозможно преобразовать в указанную систму счисления: " + sys);
