@@ -24,7 +24,10 @@ public abstract class Num {
     }
     @Override
     public String toString(){
-        return Integer.toUnsignedString(value,sys);
+        return ((value >= 0)?"":"-")+Integer.toUnsignedString((value >= 0)?value:-value,sys);
+    };
+    public String convent(int s){
+        return ((value >= 0)?"":"-")+Integer.toUnsignedString((value >= 0)?value:-value,s);
     };
     public int toInt(String val){
         if (!val.matches(regex) || val.matches("[ ,;:]"))
