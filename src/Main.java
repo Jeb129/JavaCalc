@@ -9,13 +9,14 @@ public class Main {
     }
     public static void menu(){
         String currentKey = "";
-        while (currentKey != "5") {
+        while (!currentKey.equals("5")) {
             System.out.println(
-                    "1.Действия в BIN\n" +
-                    "2.Действия в OCT\n" +
-                    "3.Действия в DEC\n" +
-                    "4.Действия в HEX\n" +
-                    "5.Выход"
+                    """
+                            1.Действия в BIN
+                            2.Действия в OCT
+                            3.Действия в DEC
+                            4.Действия в HEX
+                            5.Выход"""
             );
             currentKey = sc.nextLine();
             switch (currentKey){
